@@ -1,0 +1,68 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+  echo Add other tasks to build, test, and deploy your project.
+  pipeline {
+  agent any
+
+  stages {
+      stage('Checkout') {
+          steps {
+              // Obtém o código do repositório Git
+              git 'https://github.com/gabriel-m-o/ye_gestao_de_saude.git'
+          }
+      }
+      
+      stage('Build') {
+          steps {
+              // Compila o projeto
+              sh 'make'
+          }
+      }
+      
+      stage('Test') {
+          steps {
+              // Executa testes automatizados
+              sh 'make test'
+          }
+      }
+      
+      stage('Deploy') {
+          steps {
+              // Implanta o aplicativo
+              sh './deploy.sh'
+          }
+      }
+  }
+  
+  post {
+    always {
+        // Limpa após a execução do pipeline
+        cleanWs()
+    }
+    success {
+        // Ações em caso de sucesso
+        echo 'Pipeline executado com sucesso!'
+    }
+    failure {
+        // Ações em caso de falha
+        echo 'Falha no pipeline!'
+    }
+  }
+|
+
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
