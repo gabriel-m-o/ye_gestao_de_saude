@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "660941902840",
+    "firebase_url": "https://ye-gestao-de-saude-6843f-default-rtdb.firebaseio.com",
+    "project_id": "ye-gestao-de-saude-6843f",
+    "storage_bucket": "ye-gestao-de-saude-6843f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660941902840:android:e12a4416037d2213633c0d",
+        "android_client_info": {
+          "package_name": "com.example.app_ye_gestao_de_saude"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660941902840-ke521kcgjfe8aah60tknl3ein2qnhol3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_ye_gestao_de_saude",
+            "certificate_hash": "40482c50b1cd443a221e1214407e957aa9f1d41e"
+          }
+        },
+        {
+          "client_id": "660941902840-rt78fi256r8mr8q6aas8p7ss3j8fg43u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_ye_gestao_de_saude",
+            "certificate_hash": "aaada62377742e28a34b9f67fb1d7555b9a38bd6"
+          }
+        },
+        {
+          "client_id": "660941902840-bbeefaujg701j88e380bl84hdt0uq62t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGll-SnKpJ6lYaZhGgZz_fLDLCM3SM1VY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660941902840-bbeefaujg701j88e380bl84hdt0uq62t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "660941902840-kqi961b8crjr82ft360oc82judakut8b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appYeGestaoDeSaude"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

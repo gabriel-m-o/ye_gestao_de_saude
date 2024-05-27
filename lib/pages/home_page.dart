@@ -1,3 +1,6 @@
+import 'package:app_ye_gestao_de_saude/pages/glicemia.dart';
+import 'package:app_ye_gestao_de_saude/pages/imc.dart';
+import 'package:app_ye_gestao_de_saude/pages/peso_altura.dart';
 import 'package:app_ye_gestao_de_saude/pages/pressao.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -127,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                         Expanded(
                           child: Center(
                             child: Text(
-                              "1000X400 - Alta",
+                              "150X100 - Alta",
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
@@ -158,7 +161,13 @@ class _HomePageState extends State<HomePage> {
                     height: 10,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Glicemia()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(
                           30, 15, 15, 15), // Adiciona espaço à direita
@@ -204,7 +213,12 @@ class _HomePageState extends State<HomePage> {
                     height: 10,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PesoAltura()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(
                           30, 15, 15, 15), // Adiciona espaço à direita
@@ -250,7 +264,13 @@ class _HomePageState extends State<HomePage> {
                     height: 10,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const IMC(tipo: "IMC")),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(
                           30, 15, 15, 15), // Adiciona espaço à direita

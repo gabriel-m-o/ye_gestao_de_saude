@@ -2,7 +2,6 @@ import 'package:app_ye_gestao_de_saude/components/snackbar.dart';
 import 'package:app_ye_gestao_de_saude/services/auth_service.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ye_gestao_de_saude/pages/home_page.dart';
 import 'package:app_ye_gestao_de_saude/pages/login.dart';
 import 'package:intl/intl.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -138,6 +137,7 @@ class _CadastroState extends State<Cadastro> {
                         fontSize: 18,
                         color: Color.fromARGB(255, 152, 152, 152)),
                   ),
+                  keyboardType: TextInputType.name,
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
@@ -228,38 +228,44 @@ class _CadastroState extends State<Cadastro> {
                         });
                       },
                     ),
-                    Center(
-                        child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          "Concordo com os ",
-                          style: TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.w500,
-                              color: Color.fromARGB(220, 133, 152, 100)),
-                        ),
-                        MouseRegion(
-                          cursor: SystemMouseCursors.click,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Cadastro()),
-                              );
-                            },
-                            child: const Text(
-                              "Termos de uso e privacidade",
+                    Container(
+                      constraints: const BoxConstraints(
+                          maxWidth: 200), // Defina a largura máxima desejada
+                      child: Center(
+                        child: Wrap(
+                          alignment: WrapAlignment.start,
+                          children: [
+                            const Text(
+                              "Concordo com os ",
                               style: TextStyle(
                                   fontSize: 11,
-                                  fontWeight: FontWeight.w900,
+                                  fontWeight: FontWeight.w500,
                                   color: Color.fromARGB(220, 133, 152, 100)),
                             ),
-                          ),
-                        )
-                      ],
-                    ))
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Cadastro()),
+                                  );
+                                },
+                                child: const Text(
+                                  "Termos de uso e privacidade",
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w900,
+                                      color:
+                                          Color.fromARGB(220, 133, 152, 100)),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(
