@@ -29,8 +29,8 @@ class ModeloPesoAltura{
   Map<String, dynamic> toFirestore() {
     return {
       'data': data,
-      'sistolica': peso,
-      'diastolica': altura,
+      'peso': peso,
+      'altura': altura,
     };
   }
 }

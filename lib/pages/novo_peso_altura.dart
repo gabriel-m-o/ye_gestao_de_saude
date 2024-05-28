@@ -55,14 +55,14 @@ class _NovoPesoAlturaState extends State<NovoPesoAltura> {
 
 
   pesoAdicionar() {
-    String sistolica = _pesoController.text;
-    String diastolica =_alturaController.text;
+    String peso = _pesoController.text;
+    String altura =_alturaController.text;
     String data = _dateFormat.format(_selectedDate!);
 
     ModeloPesoAltura modeloPressao = ModeloPesoAltura(
       id: const Uuid().v1(),
-      peso : sistolica,
-      altura : diastolica,
+      peso : peso,
+      altura : altura,
       data: data,
     );
 

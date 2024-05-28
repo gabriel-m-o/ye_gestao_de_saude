@@ -66,30 +66,39 @@ class _PesoAlturaState extends State<PesoAltura> {
                     itemBuilder: (context, index) {
                       var pesoalturas = pesos[index];
                       return ListTile(
-                        title: Row(
-                          children: [
-                            Text(
-                              '${pesoalturas.peso}',
-                              style: const TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w600),
-                            ),
-                            const Spacer(),
-                            const Icon(Icons.info_outline),
-                            Text(
-                              '${pesoalturas.altura}',
-                              style: const TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w600),
-                            ),
-                            const Spacer(),
-                            const Icon(Icons.info_outline),
-                            Text(
-                              '${pesoalturas.data}',
-                              style: const TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w600),
-                            ),
-                            const Spacer(),
-                            const Icon(Icons.info_outline),
-                          ],
+                        title: SizedBox(
+                          height: 80,
+                          width: 450,
+                          child: DecoratedBox(
+                            decoration: const BoxDecoration(
+                              color: Color.fromRGBO(41, 114, 34, 0.529),
+                              borderRadius: BorderRadius.all(Radius.circular(17)),
+                            ),  
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Spacer(),
+                                Text(
+                                  '${pesoalturas.peso}',
+                                  style: const TextStyle(
+                                      fontSize: 16, fontWeight: FontWeight.w600),
+                                ),
+                                const Spacer(),
+                                Text(
+                                  '${pesoalturas.altura}',
+                                  style: const TextStyle(
+                                      fontSize: 16, fontWeight: FontWeight.w600),
+                                ),
+                                const Spacer(),
+                                Text(
+                                  '${pesoalturas.data}',
+                                  style: const TextStyle(
+                                      fontSize: 16, fontWeight: FontWeight.w600),
+                                ),
+                                const Spacer(),
+                              ],
+                            )
+                        ),
 
                         ),
                       );

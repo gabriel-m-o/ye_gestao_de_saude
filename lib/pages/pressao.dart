@@ -23,26 +23,7 @@ class _PressaoState extends State<Pressao> {
   }
 
   Future<void> _getHistoricoPressao() async {
-    //final snapshot = await databaseReference.get();
-    //print(snapshot.value);
-    //Object? historicoPressao = snapshot.value;
-
-    // await databaseReference.push().set({
-    //   'diastólica': "_diastolicaController",
-    //   'sistólica': "_sistolicaController",
-    //   'data': "_senhaController",
-    //   'dataNascimento': "dataNascimento",
-    // });
-    // Get reference to 'pressao_sanguinea' collection
-    //CollectionReference pressureRef = firestore.collection('pressao_sanguinea');
-
-    // Get all documents from the collection
-    //QuerySnapshot querySnapshot = await pressureRef.get();
-
-    // Update state with retrieved documents
-    // setState(() {
-    //   historicoPressao = querySnapshot.docs;
-    // });
+    
   }
     final PressaoService dbService = PressaoService();
 
@@ -78,37 +59,46 @@ class _PressaoState extends State<Pressao> {
                 var pressoes = snapshot.data!;
 
                 return ListView.builder(
-                    itemCount: pressoes.length,
-                    itemBuilder: (context, index) {
-                      var pressao = pressoes[index];
-                      return ListTile(
-                        title: Row(
-                          children: [
-                            Text(
-                              '${pressao.sistolica}',
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w600),
-                            ),
-                            Spacer(),
-                            Icon(Icons.info_outline),
-                            Text(
-                              '${pressao.diastolica}',
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w600),
-                            ),
-                            Spacer(),
-                            Icon(Icons.info_outline),
-                            Text(
-                              '${pressao.data}',
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w600),
-                            ),
-                            Spacer(),
-                            Icon(Icons.info_outline),
-                          ],
-
+                  itemCount: pressoes.length,
+                  itemBuilder: (context, index) {
+                    var pressao = pressoes[index];
+                    return ListTile(
+                      title: SizedBox(
+                        height: 80,
+                        width: 450,
+                        child: DecoratedBox(
+                          decoration: const BoxDecoration(
+                            color: Color.fromRGBO(41, 114, 34, 0.529),
+                            borderRadius: BorderRadius.all(Radius.circular(17)),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                              Spacer(),
+                              Text(
+                                '${pressao.sistolica} X ',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                              ),
+                              Text(
+                                '${pressao.diastolica} mmHg',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                              ),
+                              Spacer(),
+                              Text(
+                                '${pressao.data}',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                              ),
+                              Spacer(),
+                            ],
+                          
+                          ),
                         ),
+                      ),
                       );
+                    
                     });
               }),
           Align(
